@@ -1,5 +1,6 @@
 {{- required "mcProjectId is required" .Values.mcProjectId | quote | trunc 0 }}
 {{- required "mcName is required" .Values.mcName | quote | trunc 0 }}
+{{- required "image.tag is required" .Values.image.tag | quote | trunc 0 }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
