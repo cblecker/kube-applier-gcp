@@ -1,0 +1,61 @@
+{{- required "mcProjectId is required" .Values.mcProjectId | quote | trunc 0 }}
+{{- required "mcName is required" .Values.mcName | quote | trunc 0 }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-applier-gcp
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: kube-applier-gcp
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: kube-applier-gcp
+  template:
+    metadata:
+      labels:
+        app: kube-applier-gcp
+    spec:
+      serviceAccountName: kube-applier-gcp
+      containers:
+        - name: kube-applier-gcp
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          args:
+            - --namespace={{ .Values.namespace }}
+            - --management-cluster={{ .Values.mcName }}
+            - --firestore-project={{ .Values.mcProjectId }}
+            - --firestore-specs-database=specs
+            - --firestore-status-database=status
+          ports:
+            - name: metrics
+              containerPort: 8081
+              protocol: TCP
+            - name: healthz
+              containerPort: 8083
+              protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: healthz
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: healthz
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              memory: 256Mi
+          securityContext:
+            runAsNonRoot: true
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
