@@ -1,0 +1,14 @@
+# MC GCP project ID — used for Firestore project and agent flags.
+mcProjectId: ""
+
+# MC name — passed to the agent as --management-cluster.
+mcName: ""
+
+image:
+  repository: us-docker.pkg.dev/gcp-hcp-commons/gcp-hcp-images/kube-applier-gcp
+  tag: ""
+
+replicas: 1
+
+# Must match var.kube_applier_namespace in the MC Terraform module.
+namespace: kube-applier-system

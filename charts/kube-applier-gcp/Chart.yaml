@@ -1,0 +1,6 @@
+apiVersion: v2
+name: kube-applier-gcp
+description: Deploys kube-applier-gcp agent on a GKE management cluster
+type: application
+version: 0.1.0
+appVersion: "0.0.1"
