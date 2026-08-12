@@ -13,7 +13,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 
-	kubeapplier "github.com/openshift-online/kube-applier-gcp/internal/api/kubeapplier"
+	kubeapplier "github.com/openshift-online/kube-applier-gcp/pkg/api/kubeapplier"
 )
 
 func requireEmulator(t *testing.T) {

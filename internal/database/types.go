@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	kubeapplier "github.com/openshift-online/kube-applier-gcp/internal/api/kubeapplier"
+	kubeapplier "github.com/openshift-online/kube-applier-gcp/pkg/api/kubeapplier"
 )
 
 // FirestoreMetadataAccessor provides generic access to the server-managed

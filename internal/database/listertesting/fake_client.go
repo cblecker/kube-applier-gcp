@@ -1,7 +1,7 @@
 package listertesting
 
 import (
-	kubeapplier "github.com/openshift-online/kube-applier-gcp/internal/api/kubeapplier"
+	kubeapplier "github.com/openshift-online/kube-applier-gcp/pkg/api/kubeapplier"
 	"github.com/openshift-online/kube-applier-gcp/internal/database"
 )
 

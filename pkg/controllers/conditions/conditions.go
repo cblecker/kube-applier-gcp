@@ -10,7 +10,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/types"
 
-	"github.com/openshift-online/kube-applier-gcp/internal/api/kubeapplier"
+	"github.com/openshift-online/kube-applier-gcp/pkg/api/kubeapplier"
 )
 
 // PreCheckError is an error type controllers raise when they cannot even reach
