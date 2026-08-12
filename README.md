@@ -21,7 +21,7 @@ We'll probably actually use a larger burst and smaller QPS, but it's an easy sca
 The scale of a region is larger, but is handled by Firestore so it will scale far beyond our needs.
 
 ## API structure
-The API types for this live in `internal/api/kubeapplier`.
+The API types for this live in `pkg/api/kubeapplier`.
 
 Every `*Desire` API interacts with a single kubernetes resource instance.
 We do not support lists, label selection, or list-all.
@@ -93,7 +93,7 @@ database: mc-{managementClusterName}-status  (agent: read-write)
 Document IDs are deterministic UUID v5 values generated from
 `uuid.NewSHA1(namespaceUUID, "{taskKey}/{group}/{version}/{resource}/{namespace}/{name}")`.
 The namespace UUID is a fixed constant shared between the agent and backend
-(defined in `internal/desireid`). The same document ID in both databases links
+(defined in `pkg/desireid`). The same document ID in both databases links
 a spec to its status.
 
 The two-database layout means the agent cannot modify specs and the backend
