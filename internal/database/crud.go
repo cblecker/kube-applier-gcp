@@ -8,7 +8,7 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	kubeapplier "github.com/openshift-online/kube-applier-gcp/internal/api/kubeapplier"
+	kubeapplier "github.com/openshift-online/kube-applier-gcp/pkg/api/kubeapplier"
 )
 
 // desire is the type constraint for firestoreDesireCRUD. It requires

@@ -3,7 +3,7 @@ package listers
 import (
 	"k8s.io/client-go/tools/cache"
 
-	kubeapplier "github.com/openshift-online/kube-applier-gcp/internal/api/kubeapplier"
+	kubeapplier "github.com/openshift-online/kube-applier-gcp/pkg/api/kubeapplier"
 )
 
 type DeleteDesireLister interface {

@@ -26,7 +26,7 @@ import (
 	"k8s.io/klog/v2"
 	utilsclock "k8s.io/utils/clock"
 
-	"github.com/openshift-online/kube-applier-gcp/internal/api/kubeapplier"
+	"github.com/openshift-online/kube-applier-gcp/pkg/api/kubeapplier"
 	controllerutil "github.com/openshift-online/kube-applier-gcp/internal/controllerutils"
 	"github.com/openshift-online/kube-applier-gcp/internal/database"
 	"github.com/openshift-online/kube-applier-gcp/pkg/controllers/conditions"

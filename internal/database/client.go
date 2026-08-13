@@ -5,7 +5,7 @@ import (
 
 	"cloud.google.com/go/firestore"
 
-	kubeapplier "github.com/openshift-online/kube-applier-gcp/internal/api/kubeapplier"
+	kubeapplier "github.com/openshift-online/kube-applier-gcp/pkg/api/kubeapplier"
 )
 
 const (

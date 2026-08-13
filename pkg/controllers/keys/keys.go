@@ -6,7 +6,7 @@ package keys
 import (
 	"fmt"
 
-	"github.com/openshift-online/kube-applier-gcp/internal/api/kubeapplier"
+	"github.com/openshift-online/kube-applier-gcp/pkg/api/kubeapplier"
 )
 
 // ApplyDesireKey identifies a single ApplyDesire.

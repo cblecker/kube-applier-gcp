@@ -3,7 +3,7 @@ package keys
 import (
 	"testing"
 
-	"github.com/openshift-online/kube-applier-gcp/internal/api/kubeapplier"
+	"github.com/openshift-online/kube-applier-gcp/pkg/api/kubeapplier"
 )
 
 func TestApplyDesireKeyFromDesire_ClusterScoped(t *testing.T) {
